@@ -1,0 +1,362 @@
+:root {
+  --primary: #4CAF50;
+  --primary-light: #E8F5E9;
+  --primary-dark: #2E7D32;
+  --secondary: #FF9800;
+  --text: #333;
+  --text-light: #757575;
+  --background: #FAFAFA;
+  --card: #FFFFFF;
+  --border-radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.logo-icon {
+  background-color: var(--primary);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.nav-tabs {
+  display: flex;
+  background-color: var(--card);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.nav-tab {
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 500;
+}
+
+.nav-tab.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+.content-area {
+  margin-top: 20px;
+}
+
+.day-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.day-card {
+  background-color: var(--card);
+  border-radius: var(--border-radius);
+  padding: 12px;
+  box-shadow: var(--shadow);
+  min-width: 100px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.day-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.day-card.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+.meals-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.meal-card {
+  background-color: var(--card);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+}
+
+.meal-card:hover {
+  transform: translateY(-3px);
+}
+
+.meal-type {
+  color: var(--primary-dark);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meal-icon {
+  font-size: 20px;
+}
+
+.meal-items {
+  list-style-type: none;
+}
+
+.meal-items li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.meal-items li:last-child {
+  border-bottom: none;
+}
+
+.protein-tag {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 16px;
+}
+
+.budget-section {
+  display: none;
+  margin-top: 20px;
+}
+
+.budget-overview {
+  background-color: var(--card);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.budget-total {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.budget-period {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.budget-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.budget-category {
+  background-color: var(--card);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.category-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--primary-dark);
+}
+
+.item-list {
+  list-style-type: none;
+}
+
+.budget-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.budget-item:last-child {
+  border-bottom: none;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  font-weight: 500;
+}
+
+.item-quantity {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.item-shop {
+  background-color: #F5F5F5;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.item-cost {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.saving-tips {
+  background-color: var(--card);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  margin-top: 20px;
+}
+
+.saving-tips h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--primary-dark);
+}
+
+.tips-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.tip-item {
+  background-color: var(--primary-light);
+  padding: 12px;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.tip-icon {
+  color: var(--primary);
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.hair-health {
+  display: none;
+  margin-top: 20px;
+}
+
+.health-card {
+  background-color: var(--card);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.health-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.health-tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.health-tip {
+  background-color: var(--primary-light);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.health-icon {
+  color: var(--primary);
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .meals-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .budget-categories {
+    grid-template-columns: 1fr;
+  }
+  
+  .tips-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .health-tips {
+    grid-template-columns: 1fr;
+  }
+}
