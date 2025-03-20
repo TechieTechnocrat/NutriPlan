@@ -4,6 +4,7 @@ import BudgetCategory from './BudgetCategory';
 import SavingTips from './SavingTips';
 
 const BudgetSection = ({ budget }) => {
+  console.log("budget", "rednering");
   return (
     <div className="budget-section">
       <div className="budget-overview">

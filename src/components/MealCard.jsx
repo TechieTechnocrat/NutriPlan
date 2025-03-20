@@ -13,6 +13,8 @@ const MealCard = ({ meal }) => {
     }
   };
 
+  console.log("meal")
+
   return (
     <div className="meal-card">
       <div className="meal-type">
